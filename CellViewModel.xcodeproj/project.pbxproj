@@ -70,9 +70,7 @@
 		85202418220630BC00E3F7D1 /* CellViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				8520242B2206325500E3F7D1 /* ViewModels */,
-				852024212206325500E3F7D1 /* Adapter */,
-				852024282206325500E3F7D1 /* Extensions */,
+				8520243F2206348900E3F7D1 /* Sources */,
 				85202419220630BC00E3F7D1 /* CellViewModel.h */,
 				8520241A220630BC00E3F7D1 /* Info.plist */,
 			);
@@ -134,6 +132,16 @@
 				852024312206325500E3F7D1 /* AccessiblityDisplayOptions.swift */,
 			);
 			path = Accessibility;
+			sourceTree = "<group>";
+		};
+		8520243F2206348900E3F7D1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8520242B2206325500E3F7D1 /* ViewModels */,
+				852024212206325500E3F7D1 /* Adapter */,
+				852024282206325500E3F7D1 /* Extensions */,
+			);
+			path = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
