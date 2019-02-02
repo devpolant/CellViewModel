@@ -8,12 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		8520241B220630BC00E3F7D1 /* CellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 85202419220630BC00E3F7D1 /* CellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024232206325500E3F7D1 /* TableViewDataAdapter.swift */; };
+		852024342206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024252206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift */; };
+		852024352206325500E3F7D1 /* CollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024262206325500E3F7D1 /* CollectionViewDataAdapter.swift */; };
+		852024362206325500E3F7D1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024272206325500E3F7D1 /* Section.swift */; };
+		852024372206325500E3F7D1 /* UITableView+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024292206325500E3F7D1 /* UITableView+ViewModels.swift */; };
+		852024382206325500E3F7D1 /* UICollectionView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8520242A2206325500E3F7D1 /* UICollectionView+ViewModel.swift */; };
+		852024392206325500E3F7D1 /* SupplementaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8520242C2206325500E3F7D1 /* SupplementaryViewModel.swift */; };
+		8520243A2206325500E3F7D1 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8520242D2206325500E3F7D1 /* Reusable.swift */; };
+		8520243B2206325500E3F7D1 /* XibInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8520242E2206325500E3F7D1 /* XibInitializable.swift */; };
+		8520243C2206325500E3F7D1 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8520242F2206325500E3F7D1 /* CellViewModel.swift */; };
+		8520243D2206325500E3F7D1 /* AccessiblityDisplayOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024312206325500E3F7D1 /* AccessiblityDisplayOptions.swift */; };
+		8520243E2206325500E3F7D1 /* Accessible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024322206325500E3F7D1 /* Accessible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		85202416220630BC00E3F7D1 /* CellViewModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellViewModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85202419220630BC00E3F7D1 /* CellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
 		8520241A220630BC00E3F7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		852024232206325500E3F7D1 /* TableViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataAdapter.swift; sourceTree = "<group>"; };
+		852024252206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewDataAdapter.swift; sourceTree = "<group>"; };
+		852024262206325500E3F7D1 /* CollectionViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataAdapter.swift; sourceTree = "<group>"; };
+		852024272206325500E3F7D1 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
+		852024292206325500E3F7D1 /* UITableView+ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ViewModels.swift"; sourceTree = "<group>"; };
+		8520242A2206325500E3F7D1 /* UICollectionView+ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+ViewModel.swift"; sourceTree = "<group>"; };
+		8520242C2206325500E3F7D1 /* SupplementaryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplementaryViewModel.swift; sourceTree = "<group>"; };
+		8520242D2206325500E3F7D1 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		8520242E2206325500E3F7D1 /* XibInitializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XibInitializable.swift; sourceTree = "<group>"; };
+		8520242F2206325500E3F7D1 /* CellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
+		852024312206325500E3F7D1 /* AccessiblityDisplayOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessiblityDisplayOptions.swift; sourceTree = "<group>"; };
+		852024322206325500E3F7D1 /* Accessible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +70,70 @@
 		85202418220630BC00E3F7D1 /* CellViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8520242B2206325500E3F7D1 /* ViewModels */,
+				852024212206325500E3F7D1 /* Adapter */,
+				852024282206325500E3F7D1 /* Extensions */,
 				85202419220630BC00E3F7D1 /* CellViewModel.h */,
 				8520241A220630BC00E3F7D1 /* Info.plist */,
 			);
 			path = CellViewModel;
+			sourceTree = "<group>";
+		};
+		852024212206325500E3F7D1 /* Adapter */ = {
+			isa = PBXGroup;
+			children = (
+				852024272206325500E3F7D1 /* Section.swift */,
+				852024222206325500E3F7D1 /* TableView */,
+				852024242206325500E3F7D1 /* CollectionView */,
+			);
+			path = Adapter;
+			sourceTree = "<group>";
+		};
+		852024222206325500E3F7D1 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				852024232206325500E3F7D1 /* TableViewDataAdapter.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		852024242206325500E3F7D1 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				852024252206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift */,
+				852024262206325500E3F7D1 /* CollectionViewDataAdapter.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		852024282206325500E3F7D1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				852024292206325500E3F7D1 /* UITableView+ViewModels.swift */,
+				8520242A2206325500E3F7D1 /* UICollectionView+ViewModel.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8520242B2206325500E3F7D1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8520242D2206325500E3F7D1 /* Reusable.swift */,
+				8520242E2206325500E3F7D1 /* XibInitializable.swift */,
+				8520242F2206325500E3F7D1 /* CellViewModel.swift */,
+				8520242C2206325500E3F7D1 /* SupplementaryViewModel.swift */,
+				852024302206325500E3F7D1 /* Accessibility */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		852024302206325500E3F7D1 /* Accessibility */ = {
+			isa = PBXGroup;
+			children = (
+				852024322206325500E3F7D1 /* Accessible.swift */,
+				852024312206325500E3F7D1 /* AccessiblityDisplayOptions.swift */,
+			);
+			path = Accessibility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +214,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8520243C2206325500E3F7D1 /* CellViewModel.swift in Sources */,
+				852024382206325500E3F7D1 /* UICollectionView+ViewModel.swift in Sources */,
+				8520243B2206325500E3F7D1 /* XibInitializable.swift in Sources */,
+				8520243D2206325500E3F7D1 /* AccessiblityDisplayOptions.swift in Sources */,
+				852024342206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift in Sources */,
+				8520243E2206325500E3F7D1 /* Accessible.swift in Sources */,
+				852024362206325500E3F7D1 /* Section.swift in Sources */,
+				852024372206325500E3F7D1 /* UITableView+ViewModels.swift in Sources */,
+				8520243A2206325500E3F7D1 /* Reusable.swift in Sources */,
+				852024392206325500E3F7D1 /* SupplementaryViewModel.swift in Sources */,
+				852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */,
+				852024352206325500E3F7D1 /* CollectionViewDataAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
