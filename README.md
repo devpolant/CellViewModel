@@ -60,15 +60,22 @@ struct UserCellModel: CellViewModel {
 
 // MARK: - Cell
 
-final class UserTableViewCell: UITableViewCell {
+final class UserTableViewCell: UITableViewCell, XibInitializable {
     @IBOutlet weak var nameLabel: UILabel!
 }
 ```
 
 2) After that you need to register created model type:
 
+There are 2 options:
+- use `register(nibModel:)` if appropriate `CellViewModel`'s `Cell` conforms to `XibInitializable`:
 ```Swift
 tableView.register(nibModel: UserCellModel.self)
+```
+
+- otherwise use `register(viewModel:)`:
+```Swift
+tableView.register(viewModel: UserCellModel.self)
 ```
 
 3) Then store your models in array (or your custom datasource type):
