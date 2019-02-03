@@ -17,7 +17,9 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 #### CocoaPods
 
 ```ruby
-pod 'CellViewModel'
+target 'MyApp' do
+  pod 'CellViewModel', '~> 1.0'
+end
 ```
 
 #### Carthage
