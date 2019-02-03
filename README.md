@@ -18,7 +18,7 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 
 ```ruby
 target 'MyApp' do
-  pod 'CellViewModel', '~> 1.0'
+  pod 'CellViewModel', '~> 1.1'
 end
 ```
 
@@ -191,3 +191,8 @@ struct UserCellModel: CellViewModel {
 
     // ...
 }
+```
+
+## License
+
+**CellViewModel** is available under the MIT license. See the [LICENSE](https://github.com/AntonPoltoratskyi/CellViewModel/blob/master/LICENSE) file for more info.
