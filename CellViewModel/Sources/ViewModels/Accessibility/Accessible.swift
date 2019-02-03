@@ -9,17 +9,24 @@
 import Foundation
 
 public protocol Accessible {
-    var accessibilityIdentifier: String { get }
+    var accessibilityIdentifier: String? { get }
     var accessibilityOptions: AccessibilityDisplayOptions { get }
 }
 
 extension Accessible {
     
+    public var accessibilityIdentifier: String? {
+        return nil
+    }
+    
     public var accessibilityOptions: AccessibilityDisplayOptions {
         return .none
     }
     
-    public func accessibilityIdentifier(for indexPath: IndexPath) -> String {
+    public func accessibilityIdentifier(for indexPath: IndexPath) -> String? {
+        guard let accessibilityIdentifier = accessibilityIdentifier else {
+            return nil
+        }
         let options = accessibilityOptions
         if options.contains(.section) && options.contains(.row) {
             return "\(accessibilityIdentifier)_\(indexPath.section)_\(indexPath.row)"
