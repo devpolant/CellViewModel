@@ -1,28 +1,27 @@
 Pod::Spec.new do |s|
 
-  s.name         = "CellViewModel"
+  s.name        = "CellViewModel"
 
-  s.version      = "0.2.0"
+  s.version     = "1.0.0"
 
-  s.summary      = "CellViewModel is a protocol that includes logic for reuse, accessibility and dequeue"
+  s.summary     = "CellViewModel is a protocol that includes logic for reuse, accessibility and dequeue"
 
-  s.description  = "Repository contains CellViewModel implementation
-                    that includes logic for reuse, accessibility and dequeue"
+  s.description = "Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is just a one possible approach of work with UIKit's collections."
 
-  s.homepage     = "https://github.com/AntonPoltoratskyi/CellViewModel"
+  s.homepage    = "https://github.com/AntonPoltoratskyi/CellViewModel"
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.license     = { :type => "MIT", :file => "LICENSE" }
 
-  s.author    = "Anton Poltoratskyi"
+  s.author      = "Anton Poltoratskyi"
 
-  s.platform     = :ios, "10.0"
+  s.platform    = :ios, "10.0"
 
-  s.source       = { :git => "https://github.com/AntonPoltoratskyi/CellViewModel.git", :tag => "#{s.version}" }
+  s.source      = { :git => "https://github.com/AntonPoltoratskyi/CellViewModel.git", :tag => "#{s.version}" }
 
-  s.source_files  = "CellViewModel/Sources", "CellViewModel/Sources/**/*.{swift}"
+  s.source_files    = "CellViewModel/Sources", "CellViewModel/Sources/**/*.{swift}"
 
-  s.framework  = "UIKit"
+  s.framework       = "UIKit"
 
-  s.swift_version = "4.2"
+  s.swift_version   = "4.2"
 
 end
