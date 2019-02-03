@@ -148,3 +148,46 @@ func setup(users: [AnyCellViewModel]) {
     adapter.data = users
 }
 ```
+
+
+### Accessibility
+
+Sometimes there is a need to define `accessibilityIdentifier` for UI testing purposes.
+
+There is [Accessible](https://github.com/AntonPoltoratskyi/CellViewModel/blob/master/CellViewModel/Sources/ViewModels/Accessibility/Accessible.swift) protocol that is conformed by CellViewModel protocol.
+
+```swift
+public protocol Accessible {
+    var accessibilityIdentifier: String? { get }
+    var accessibilityOptions: AccessibilityDisplayOptions { get }
+}
+```
+
+So you need to define `accessibilityIdentifier` property in your model type implementation:
+
+```swift
+struct UserCellModel: CellViewModel {
+
+    var accessibilityIdentifier: String? {
+        return "user_cell"
+    }
+
+    // ...
+}
+```
+
+And define `accessibilityOptions` if needed to add index path as suffix in the end of `accessibilityIdentifier`:
+
+```swift
+struct UserCellModel: CellViewModel {
+
+    var accessibilityIdentifier: String? {
+        return "user_cell"
+    }
+    
+    var accessibilityOptions: AccessibilityDisplayOptions {
+        return [.row, .section]
+    }
+
+    // ...
+}
