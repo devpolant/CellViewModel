@@ -116,3 +116,26 @@ extension ViewController: UITableViewDataSource {
     }
 }
 ```
+
+5) Or use **TableViewDataAdapter**:
+
+```swift
+private lazy var adapter = TableViewDataAdapter(tableView: self.tableView)
+```
+
+assign it as UITableView's dataSource:
+
+```swift
+override func viewDidLoad() {
+    super.viewDidLoad()
+    self.tableView.dataSource = adapter
+}
+```
+
+updating `data` property will cause `reloadData()`
+
+```swift
+func setup(users: [AnyCellViewModel]) {
+    adapter.data = users
+}
+```
