@@ -10,9 +10,9 @@ import UIKit
 
 // MARK: - Cell
 
-extension UITableView {
+public extension UITableView {
     
-    public func dequeueReusableCell(withModel viewModel: AnyCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
+    func dequeueReusableCell(withModel viewModel: AnyCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
         let identifier = type(of: viewModel).uniqueIdentifier
         let cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         cell.accessibilityIdentifier = viewModel.accessibilityIdentifier(for: indexPath)
@@ -20,11 +20,16 @@ extension UITableView {
         return cell
     }
     
-    public func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell {
+    func register(anyViewModel viewModel: AnyCellViewModel) {
+        let modelType = type(of: viewModel)
+        register(modelType.cellClass, forCellReuseIdentifier: modelType.uniqueIdentifier)
+    }
+    
+    func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell {
         register(T.Cell.self, forCellReuseIdentifier: T.uniqueIdentifier)
     }
     
-    public func register<T: CellViewModel>(nibModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
+    func register<T: CellViewModel>(nibModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
         let nib = UINib(nibName: T.Cell.xibFileName, bundle: Bundle(for: T.Cell.self))
         register(nib, forCellReuseIdentifier: T.uniqueIdentifier)
     }
@@ -32,13 +37,13 @@ extension UITableView {
 
 // MARK: - Header / Footer
 
-extension UITableView {
+public extension UITableView {
     
-    public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>(ofType type: T.Type) -> T {
+    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>(ofType type: T.Type) -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.uniqueIdentifier) as! T
     }
     
-    public func register<T: UITableViewHeaderFooterView & Reusable>(headerFooter: T.Type) {
+    func register<T: UITableViewHeaderFooterView & Reusable>(headerFooter: T.Type) {
         register(T.self, forHeaderFooterViewReuseIdentifier: T.uniqueIdentifier)
     }
 }
