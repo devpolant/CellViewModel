@@ -21,8 +21,14 @@ public extension UICollectionView {
     }
     
     func register(anyViewModel viewModel: AnyCellViewModel) {
-        let modelType = type(of: viewModel)
-        register(modelType.cellClass, forCellWithReuseIdentifier: modelType.uniqueIdentifier)
+        if let viewModel = viewModel as? AnyCellViewModel & XibInitializable, case let modelType = type(of: viewModel) {
+            let nib = UINib(nibName: modelType.xibFileName, bundle: Bundle(for: modelType.cellClass))
+            register(nib, forCellWithReuseIdentifier: modelType.uniqueIdentifier)
+            
+        } else {
+            let modelType = type(of: viewModel)
+            register(modelType.cellClass, forCellWithReuseIdentifier: modelType.uniqueIdentifier)
+        }
     }
     
     func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UICollectionViewCell {
