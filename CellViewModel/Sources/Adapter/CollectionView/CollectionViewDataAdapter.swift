@@ -26,6 +26,7 @@ open class CollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSource {
         self.collectionView = collectionView
         self.dataProvider = dataProvider
         super.init()
+        collectionView.dataSource = self
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

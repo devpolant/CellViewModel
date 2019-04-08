@@ -26,6 +26,7 @@ open class TableViewDataAdapter<T>: NSObject, UITableViewDataSource {
         self.tableView = tableView
         self.dataProvider = dataProvider
         super.init()
+        tableView.dataSource = self
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

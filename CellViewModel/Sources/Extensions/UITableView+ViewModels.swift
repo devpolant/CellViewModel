@@ -20,15 +20,18 @@ public extension UITableView {
         return cell
     }
     
-    func register(anyViewModel viewModel: AnyCellViewModel) {
-        if let viewModel = viewModel as? AnyCellViewModel & XibInitializable, case let modelType = type(of: viewModel) {
-            let nib = UINib(nibName: modelType.xibFileName, bundle: Bundle(for: modelType.cellClass))
+    func register(anyViewModel modelType: AnyCellViewModel.Type) {
+        if let xibFileName = (modelType.cellClass as? XibInitializable.Type)?.xibFileName {
+            let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.cellClass))
             register(nib, forCellReuseIdentifier: modelType.uniqueIdentifier)
             
         } else {
-            let modelType = type(of: viewModel)
             register(modelType.cellClass, forCellReuseIdentifier: modelType.uniqueIdentifier)
         }
+    }
+    
+    func register(anyModels models: [AnyCellViewModel.Type]) {
+        models.forEach { register(anyViewModel: $0) }
     }
     
     func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell {

@@ -12,12 +12,16 @@ public typealias AnySupplementaryView = UICollectionReusableView
 
 public protocol AnySupplementaryViewModel: Reusable, Accessible {
     static var supplementaryKind: String { get }
+    var height: CGFloat? { get }
     func setup(view: AnySupplementaryView)
 }
 
 extension AnySupplementaryViewModel {
     public static var supplementaryKind: String {
         return UICollectionView.elementKindSectionHeader
+    }
+    public var height: CGFloat? {
+        return nil
     }
 }
 

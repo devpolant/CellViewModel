@@ -21,6 +21,7 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
     public init(collectionView: UICollectionView) {
         self.collectionView = collectionView
         super.init()
+        collectionView.dataSource = self
     }
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -60,6 +61,16 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
     open func supplementaryModel(ofKind kind: String, in section: Int) -> AnySupplementaryViewModel? {
         let indexPath = IndexPath(item: 0, section: section)
         return supplementaryModel(ofKind: kind, at: indexPath)
+    }
+    
+    open func headerModel(in section: Int) -> AnySupplementaryViewModel? {
+        let indexPath = IndexPath(item: 0, section: section)
+        return supplementaryModel(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath)
+    }
+    
+    open func footerModel(in section: Int) -> AnySupplementaryViewModel? {
+        let indexPath = IndexPath(item: 0, section: section)
+        return supplementaryModel(ofKind: UICollectionView.elementKindSectionFooter, at: indexPath)
     }
     
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {

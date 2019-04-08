@@ -12,7 +12,14 @@ public typealias AnyViewCell = UIView
 
 public protocol AnyCellViewModel: Reusable, Accessible {
     static var cellClass: AnyClass { get }
+    var height: CGFloat? { get }
     func setup(cell: AnyViewCell)
+}
+
+extension AnyCellViewModel {
+    var height: CGFloat? {
+        return nil
+    }
 }
 
 public protocol CellViewModel: AnyCellViewModel {
