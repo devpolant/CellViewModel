@@ -58,6 +58,10 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
         }
     }
     
+    open func sectionModel(at index: Int) -> Section {
+        return data[index]
+    }
+    
     open func supplementaryModel(ofKind kind: String, in section: Int) -> AnySupplementaryViewModel? {
         let indexPath = IndexPath(item: 0, section: section)
         return supplementaryModel(ofKind: kind, at: indexPath)

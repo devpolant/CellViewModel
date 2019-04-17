@@ -12,15 +12,16 @@ public typealias AnySupplementaryView = UICollectionReusableView
 
 public protocol AnySupplementaryViewModel: Reusable, Accessible {
     static var supplementaryKind: String { get }
-    var height: CGFloat? { get }
+    static var supplementaryViewClass: AnyClass { get }
     func setup(view: AnySupplementaryView)
+    func height(constrainedBy maxWidth: CGFloat) -> CGFloat?
 }
 
 extension AnySupplementaryViewModel {
     public static var supplementaryKind: String {
         return UICollectionView.elementKindSectionHeader
     }
-    public var height: CGFloat? {
+    public func height(constrainedBy maxWidth: CGFloat) -> CGFloat? {
         return nil
     }
 }
@@ -31,7 +32,13 @@ public protocol SupplementaryViewModel: AnySupplementaryViewModel {
 }
 
 extension SupplementaryViewModel {
+    public static var supplementaryViewClass: AnyClass {
+        return View.self
+    }
+    
     public func setup(view: AnySupplementaryView) {
+        // swiftlint:disable force_cast
         setup(view: view as! View)
+        // swiftlint:enable force_cast
     }
 }

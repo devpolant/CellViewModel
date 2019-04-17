@@ -20,7 +20,7 @@ public extension UICollectionView {
         return cell
     }
     
-    func register(anyViewModel modelType: AnyCellViewModel.Type) {
+    func register(_ modelType: AnyCellViewModel.Type) {
         if let xibFileName = (modelType.cellClass as? XibInitializable.Type)?.xibFileName {
             let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.cellClass))
             register(nib, forCellWithReuseIdentifier: modelType.uniqueIdentifier)
@@ -30,15 +30,19 @@ public extension UICollectionView {
         }
     }
     
-    func register(anyModels models: [AnyCellViewModel.Type]) {
-        models.forEach { register(anyViewModel: $0) }
+    func register(_ models: [AnyCellViewModel.Type]) {
+        models.forEach { register($0) }
+    }
+    
+    func register(_ models: AnyCellViewModel.Type...) {
+        models.forEach { register($0) }
     }
     
     func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UICollectionViewCell {
         register(T.Cell.self, forCellWithReuseIdentifier: T.uniqueIdentifier)
     }
     
-    func register<T: CellViewModel>(nibModel: T.Type) where T.Cell: UICollectionViewCell, T.Cell: XibInitializable {
+    func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UICollectionViewCell, T.Cell: XibInitializable {
         let nib = UINib(nibName: T.Cell.xibFileName, bundle: Bundle(for: T.Cell.self))
         register(nib, forCellWithReuseIdentifier: T.uniqueIdentifier)
     }
@@ -57,11 +61,31 @@ public extension UICollectionView {
         return view
     }
     
+    func register(_ modelType: AnySupplementaryViewModel.Type) {
+        if let xibFileName = (modelType.supplementaryViewClass as? XibInitializable.Type)?.xibFileName {
+            let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.supplementaryViewClass))
+            register(nib, forSupplementaryViewOfKind: modelType.supplementaryKind, withReuseIdentifier: modelType.uniqueIdentifier)
+            
+        } else {
+            register(modelType.supplementaryViewClass,
+                     forSupplementaryViewOfKind: modelType.supplementaryKind,
+                     withReuseIdentifier: modelType.uniqueIdentifier)
+        }
+    }
+    
+    func register(_ models: [AnySupplementaryViewModel.Type]) {
+        models.forEach { register($0) }
+    }
+    
+    func register(_ models: AnySupplementaryViewModel.Type...) {
+        models.forEach { register($0) }
+    }
+    
     func register<T: SupplementaryViewModel>(supplementaryModel: T.Type) {
         register(T.View.self, forSupplementaryViewOfKind: T.supplementaryKind, withReuseIdentifier: T.uniqueIdentifier)
     }
     
-    func register<T: SupplementaryViewModel>(nibModel: T.Type) where T.View: XibInitializable {
+    func register<T: SupplementaryViewModel>(supplementaryModel: T.Type) where T.View: XibInitializable {
         let nib = UINib(nibName: T.View.xibFileName, bundle: Bundle(for: T.View.self))
         register(nib, forSupplementaryViewOfKind: T.supplementaryKind, withReuseIdentifier: T.uniqueIdentifier)
     }

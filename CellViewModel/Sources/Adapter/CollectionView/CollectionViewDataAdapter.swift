@@ -42,7 +42,6 @@ open class CollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSource {
     }
 }
 
-
 extension CollectionViewDataAdapter where T == AnyCellViewModel {
     
     public convenience init(collectionView: UICollectionView) {

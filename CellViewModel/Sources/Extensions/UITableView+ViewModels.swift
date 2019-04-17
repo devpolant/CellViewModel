@@ -20,7 +20,7 @@ public extension UITableView {
         return cell
     }
     
-    func register(anyViewModel modelType: AnyCellViewModel.Type) {
+    func register(_ modelType: AnyCellViewModel.Type) {
         if let xibFileName = (modelType.cellClass as? XibInitializable.Type)?.xibFileName {
             let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.cellClass))
             register(nib, forCellReuseIdentifier: modelType.uniqueIdentifier)
@@ -30,15 +30,19 @@ public extension UITableView {
         }
     }
     
-    func register(anyModels models: [AnyCellViewModel.Type]) {
-        models.forEach { register(anyViewModel: $0) }
+    func register(_ models: [AnyCellViewModel.Type]) {
+        models.forEach { register($0) }
+    }
+    
+    func register(_ models: AnyCellViewModel.Type...) {
+        models.forEach { register($0) }
     }
     
     func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell {
         register(T.Cell.self, forCellReuseIdentifier: T.uniqueIdentifier)
     }
     
-    func register<T: CellViewModel>(nibModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
+    func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
         let nib = UINib(nibName: T.Cell.xibFileName, bundle: Bundle(for: T.Cell.self))
         register(nib, forCellReuseIdentifier: T.uniqueIdentifier)
     }

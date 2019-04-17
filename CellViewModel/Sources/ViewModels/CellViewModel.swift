@@ -12,12 +12,12 @@ public typealias AnyViewCell = UIView
 
 public protocol AnyCellViewModel: Reusable, Accessible {
     static var cellClass: AnyClass { get }
-    var height: CGFloat? { get }
     func setup(cell: AnyViewCell)
+    func height(constrainedBy maxWidth: CGFloat) -> CGFloat?
 }
 
 extension AnyCellViewModel {
-    var height: CGFloat? {
+    public func height(constrainedBy maxWidth: CGFloat) -> CGFloat? {
         return nil
     }
 }
@@ -27,12 +27,14 @@ public protocol CellViewModel: AnyCellViewModel {
     func setup(cell: Cell)
 }
 
-public extension CellViewModel {
-    static var cellClass: AnyClass {
+extension CellViewModel {
+    public static var cellClass: AnyClass {
         return Cell.self
     }
     
-    func setup(cell: AnyViewCell) {
+    public func setup(cell: AnyViewCell) {
+        // swiftlint:disable force_cast
         setup(cell: cell as! Cell)
+        // swiftlint:enable force_cast
     }
 }
