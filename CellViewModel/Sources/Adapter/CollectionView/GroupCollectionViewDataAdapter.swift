@@ -38,11 +38,11 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
         guard let model = supplementaryModel(ofKind: kind, at: indexPath) else {
             fatalError("supplementary model = nil, at indexPath = \(indexPath)")
         }
-        return collectionView.dequeueReusableSupplementaryView(withModel: model, for: indexPath)
+        return collectionView.dequeueReusableSupplementaryView(with: model, for: indexPath)
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withModel: itemModel(at: indexPath), for: indexPath)
+        return collectionView.dequeueReusableCell(with: itemModel(at: indexPath), for: indexPath)
     }
     
     open func supplementaryModel(ofKind kind: String, at indexPath: IndexPath) -> AnySupplementaryViewModel? {

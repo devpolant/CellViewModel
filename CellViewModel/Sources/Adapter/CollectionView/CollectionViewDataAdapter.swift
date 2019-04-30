@@ -34,7 +34,7 @@ open class CollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSource {
     }
     
     open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return collectionView.dequeueReusableCell(withModel: itemModel(at: indexPath), for: indexPath)
+        return collectionView.dequeueReusableCell(with: itemModel(at: indexPath), for: indexPath)
     }
     
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {

@@ -34,7 +34,7 @@ open class TableViewDataAdapter<T>: NSObject, UITableViewDataSource {
     }
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withModel: itemModel(at: indexPath), for: indexPath)
+        return tableView.dequeueReusableCell(with: itemModel(at: indexPath), for: indexPath)
     }
     
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {

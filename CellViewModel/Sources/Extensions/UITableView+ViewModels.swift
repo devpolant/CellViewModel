@@ -12,7 +12,7 @@ import UIKit
 
 public extension UITableView {
     
-    func dequeueReusableCell(withModel viewModel: AnyCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
+    func dequeueReusableCell(with viewModel: AnyCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
         let identifier = type(of: viewModel).uniqueIdentifier
         let cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         cell.accessibilityIdentifier = viewModel.accessibilityIdentifier(for: indexPath)
@@ -38,11 +38,11 @@ public extension UITableView {
         models.forEach { register($0) }
     }
     
-    func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell {
+    func register<T: CellViewModel>(_ viewModel: T.Type) where T.Cell: UITableViewCell {
         register(T.Cell.self, forCellReuseIdentifier: T.uniqueIdentifier)
     }
     
-    func register<T: CellViewModel>(viewModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
+    func register<T: CellViewModel>(_ viewModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
         let nib = UINib(nibName: T.Cell.xibFileName, bundle: Bundle(for: T.Cell.self))
         register(nib, forCellReuseIdentifier: T.uniqueIdentifier)
     }

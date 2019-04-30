@@ -121,8 +121,8 @@
 				8520242D2206325500E3F7D1 /* Reusable.swift */,
 				8520242E2206325500E3F7D1 /* XibInitializable.swift */,
 				8520242F2206325500E3F7D1 /* CellViewModel.swift */,
-				3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */,
 				8520242C2206325500E3F7D1 /* SupplementaryViewModel.swift */,
+				3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */,
 				852024302206325500E3F7D1 /* Accessibility */,
 			);
 			path = ViewModels;
