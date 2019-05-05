@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
 
   s.framework       = "UIKit"
 
-  s.swift_versions = ['3.0', '4.0', '4.2']
+  s.swift_version = '4.2'
 
 end
