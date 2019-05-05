@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */; };
+		851A8746227F73C100666B97 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A8745227F73C100666B97 /* BaseCollectionViewController.swift */; };
 		8520241B220630BC00E3F7D1 /* CellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 85202419220630BC00E3F7D1 /* CellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024232206325500E3F7D1 /* TableViewDataAdapter.swift */; };
 		852024342206325500E3F7D1 /* CollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024252206325500E3F7D1 /* CollectionViewDataAdapter.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveCellViewModel.swift; sourceTree = "<group>"; };
+		851A8745227F73C100666B97 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		85202416220630BC00E3F7D1 /* CellViewModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellViewModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85202419220630BC00E3F7D1 /* CellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
 		8520241A220630BC00E3F7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		851A8744227F73AB00666B97 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				851A8745227F73C100666B97 /* BaseCollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		8520240C220630BC00E3F7D1 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +153,7 @@
 				8520242B2206325500E3F7D1 /* ViewModels */,
 				852024212206325500E3F7D1 /* Adapter */,
 				852024282206325500E3F7D1 /* Extensions */,
+				851A8744227F73AB00666B97 /* ViewControllers */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -236,6 +247,7 @@
 				852024372206325500E3F7D1 /* UITableView+ViewModels.swift in Sources */,
 				8520243A2206325500E3F7D1 /* Reusable.swift in Sources */,
 				852024392206325500E3F7D1 /* SupplementaryViewModel.swift in Sources */,
+				851A8746227F73C100666B97 /* BaseCollectionViewController.swift in Sources */,
 				852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */,
 				852024352206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift in Sources */,
 			);

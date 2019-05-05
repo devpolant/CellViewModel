@@ -10,9 +10,9 @@ import UIKit
 
 // MARK: - Cell
 
-public extension UITableView {
+extension UITableView {
     
-    func dequeueReusableCell(with viewModel: AnyCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
+    public func dequeueReusableCell(with viewModel: AnyCellViewModel, for indexPath: IndexPath) -> UITableViewCell {
         let identifier = type(of: viewModel).uniqueIdentifier
         let cell = dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         cell.accessibilityIdentifier = viewModel.accessibilityIdentifier(for: indexPath)
@@ -20,7 +20,7 @@ public extension UITableView {
         return cell
     }
     
-    func register(_ modelType: AnyCellViewModel.Type) {
+    public func register(_ modelType: AnyCellViewModel.Type) {
         if let xibFileName = (modelType.cellClass as? XibInitializable.Type)?.xibFileName {
             let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.cellClass))
             register(nib, forCellReuseIdentifier: modelType.uniqueIdentifier)
@@ -30,19 +30,19 @@ public extension UITableView {
         }
     }
     
-    func register(_ models: [AnyCellViewModel.Type]) {
+    public func register(_ models: [AnyCellViewModel.Type]) {
         models.forEach { register($0) }
     }
     
-    func register(_ models: AnyCellViewModel.Type...) {
+    public func register(_ models: AnyCellViewModel.Type...) {
         models.forEach { register($0) }
     }
     
-    func register<T: CellViewModel>(_ viewModel: T.Type) where T.Cell: UITableViewCell {
+    public func register<T: CellViewModel>(_ viewModel: T.Type) where T.Cell: UITableViewCell {
         register(T.Cell.self, forCellReuseIdentifier: T.uniqueIdentifier)
     }
     
-    func register<T: CellViewModel>(_ viewModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
+    public func register<T: CellViewModel>(_ viewModel: T.Type) where T.Cell: UITableViewCell, T.Cell: XibInitializable {
         let nib = UINib(nibName: T.Cell.xibFileName, bundle: Bundle(for: T.Cell.self))
         register(nib, forCellReuseIdentifier: T.uniqueIdentifier)
     }
@@ -50,13 +50,13 @@ public extension UITableView {
 
 // MARK: - Header / Footer
 
-public extension UITableView {
+extension UITableView {
     
-    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>(ofType type: T.Type) -> T {
+    public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>(ofType type: T.Type) -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.uniqueIdentifier) as! T
     }
     
-    func register<T: UITableViewHeaderFooterView & Reusable>(headerFooter: T.Type) {
+    public func register<T: UITableViewHeaderFooterView & Reusable>(headerFooter: T.Type) {
         register(T.self, forHeaderFooterViewReuseIdentifier: T.uniqueIdentifier)
     }
 }
