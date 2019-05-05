@@ -165,6 +165,13 @@ Sometimes you need a table UI, but with some unique section insets or interitem 
 ```swift
 
 final class UsersViewController: BaseCollectionViewController {
+
+    @IBOutlet weak var collectionView: UICollectionView {
+        didSet {
+            // initialize reference in base class
+            _collectionView = collectionView
+        }
+    }
     
     override var viewModels: [AnyCellViewModel.Type] {
         return [
