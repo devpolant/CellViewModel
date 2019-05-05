@@ -124,7 +124,7 @@ extension ViewController: UITableViewDataSource {
 
 ### Quick Setup
 
-Use existed adapters in order to perform quick setup.
+Use existed adapters in order to perform quick setup. 
 
 1. For `UITableView` - **TableViewDataAdapter**
 
@@ -151,6 +151,61 @@ func setup(users: [AnyCellViewModel]) {
     adapter.data = users
 }
 ```
+
+Both adapters already conform to appropriate datasource protocol: `UICollectionViewDataSource` and `UITableViewDataSource`.
+
+### Base View Controller
+
+The most simplier way to set up is to inherit from `BaseCollectionViewController`.
+
+Sometimes you need a table UI, but with some unique section insets or interitem spacing. For this case `BaseCollectionViewController` provides default implementation of `UICollectionViewDelegateFlowLayout` protocol to match the  table UI for you.
+
+#### Usage
+
+```swift
+
+final class UsersViewController: BaseCollectionViewController {
+    
+    override var viewModels: [AnyCellViewModel.Type] {
+        return [
+            UserCellModel.self,
+            // ... add more
+        ]
+    }
+    
+    override var supplementaryModels: [AnySupplementaryViewModel.Type] {
+        return [
+            UserHeaderModel.self,
+            /// ... add more
+        ]
+    }
+    
+    // ... your domain code
+```
+
+`BaseCollectionViewController` is a wrapper for `CollectionViewDataAdapter`, so it is already have setup method:
+
+```swift
+    open func setup(_ sections: [Section]) {
+        adapter.data = sections
+    }
+```
+
+`Section` type is a container for header, footer, items models and layout information like spacings etc.
+
+```swift
+public final class Section {
+    
+    public var insets: UIEdgeInsets?
+    public var lineSpacing: CGFloat?
+    public var header: AnySupplementaryViewModel?
+    public var footer: AnySupplementaryViewModel?
+    public var items: [AnyCellViewModel]
+    
+    /// ...
+}
+```
+
 
 ### Accessibility
 
