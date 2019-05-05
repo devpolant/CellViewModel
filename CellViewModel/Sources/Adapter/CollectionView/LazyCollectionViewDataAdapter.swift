@@ -1,5 +1,5 @@
 //
-//  CollectionViewDataAdapter.swift
+//  LazyCollectionViewDataAdapter.swift
 //  CellViewModel
 //
 //  Created by Anton Poltoratskyi on 02.02.2019.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-open class CollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSource {
+open class LazyCollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSource {
     
-    public typealias DataProvider = (CollectionViewDataAdapter<T>, IndexPath) -> AnyCellViewModel
+    public typealias DataProvider = (LazyCollectionViewDataAdapter<T>, IndexPath) -> AnyCellViewModel
     
     open var data: [T] = [] {
         didSet {
@@ -42,7 +42,7 @@ open class CollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSource {
     }
 }
 
-extension CollectionViewDataAdapter where T == AnyCellViewModel {
+extension LazyCollectionViewDataAdapter where T == AnyCellViewModel {
     
     public convenience init(collectionView: UICollectionView) {
         self.init(collectionView: collectionView) { dataSource, indexPath in
@@ -51,7 +51,7 @@ extension CollectionViewDataAdapter where T == AnyCellViewModel {
     }
 }
 
-extension CollectionViewDataAdapter where T: AnyCellViewModel {
+extension LazyCollectionViewDataAdapter where T: AnyCellViewModel {
     
     public convenience init(collectionView: UICollectionView) {
         self.init(collectionView: collectionView) { dataSource, indexPath in
