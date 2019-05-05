@@ -34,7 +34,9 @@ github "AntonPoltoratskyi/CellViewModel" "master"
 
 You can move configuration logic for **UITableViewCell** or **UICollectionViewCell** from **-cellForRowAtIndexPath:** to separate types.
 
-1) You need to create cell class and appropriate type that conforms to **CellViewModel** type:
+### Native setup
+
+1) Create cell class and appropriate type that conforms to **CellViewModel** type:
 
 ```Swift
 public typealias AnyViewCell = UIView
@@ -67,18 +69,12 @@ final class UserTableViewCell: UITableViewCell, XibInitializable {
 }
 ```
 
-2) After that you need to register created model type:
-
-There are 2 options:
-- use `register(nibModel:)` if appropriate `CellViewModel`'s `Cell` conforms to `XibInitializable`:
+2) Register created model type:
 ```Swift
-tableView.register(nibModel: UserCellModel.self)
+tableView.register(UserCellModel.self)
 ```
 
-- otherwise use `register(viewModel:)`:
-```Swift
-tableView.register(viewModel: UserCellModel.self)
-```
+By registering model type it will be checked if cell class conforms to XibInitializable or not in order to register `UINib` or just cell's class type.
 
 3) Then store your models in array (or your custom datasource type):
 
@@ -93,7 +89,7 @@ It's needed only in order to fix compiler limitation as **you can use protocols 
 private var users: [CellViewModel] = [] // won't compile
 ```
 
-4) **UITableViewDataSource** implementation is very easy, even if you have multiple cell types, because all logic are contained in our view models:
+4) **UITableViewDataSource** implementation is very easy, even if you have multiple cell types, because all 'cellForRow' logic is contained in our view models:
 
 ```Swift
 import CellViewModel
@@ -117,7 +113,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withModel: tableModel(at: indexPath), for: indexPath)
+        return tableView.dequeueReusableCell(with: tableModel(at: indexPath), for: indexPath)
     }
     
     private func tableModel(at indexPath: IndexPath) -> AnyCellViewModel {
@@ -126,29 +122,35 @@ extension ViewController: UITableViewDataSource {
 }
 ```
 
-5) Or use **TableViewDataAdapter**:
+### Quick Setup
+
+Use existed adapters in order to perform quick setup.
+
+1. For `UITableView` - **TableViewDataAdapter**
 
 ```swift
 private lazy var adapter = TableViewDataAdapter(tableView: self.tableView)
-```
 
-assign it as UITableView's dataSource:
+// ...
 
-```swift
-override func viewDidLoad() {
-    super.viewDidLoad()
-    self.tableView.dataSource = adapter
-}
-```
-
-updating `data` property will cause `reloadData()`
-
-```swift
 func setup(users: [AnyCellViewModel]) {
     adapter.data = users
 }
 ```
 
+Updating `data` property will call `reloadData()`.
+
+2. For `UICollectionView` - **CollectionViewDataAdapter**:
+
+```swift
+private lazy var adapter = CollectionViewDataAdapter(tableView: self.collectionView)
+
+// ...
+
+func setup(users: [AnyCellViewModel]) {
+    adapter.data = users
+}
+```
 
 ### Accessibility
 
