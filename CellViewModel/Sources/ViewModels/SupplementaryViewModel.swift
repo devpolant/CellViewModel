@@ -19,7 +19,7 @@ public protocol AnySupplementaryViewModel: Reusable, Accessible {
 
 extension AnySupplementaryViewModel {
     public static var supplementaryKind: String {
-        return UICollectionView.elementKindSectionHeader
+        return CollectionSectionHeaderType
     }
     public func height(constrainedBy maxWidth: CGFloat) -> CGFloat? {
         return nil
