@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name        = "CellViewModel"
 
-  s.version     = "1.4.1"
+  s.version     = "1.5.0"
 
   s.summary     = "CellViewModel is a protocol that includes logic for reuse, accessibility and dequeue"
 
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 
   s.author      = "Anton Poltoratskyi"
 
-  s.platform    = :ios, "10.0"
+  s.platform    = :ios, "9.0"
 
   s.source      = { :git => "https://github.com/AntonPoltoratskyi/CellViewModel.git", :tag => "#{s.version}" }
 
@@ -22,6 +22,6 @@ Pod::Spec.new do |s|
 
   s.framework       = "UIKit"
 
-  s.swift_version = "4.2"
+  s.swift_versions = ['3.0', '4.0', '4.2']
 
 end

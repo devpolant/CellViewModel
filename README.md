@@ -8,7 +8,7 @@
 Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is just a one possible approach of work with UIKit's collections.
 
 ## Requirements:
-- iOS 10.0+
+- iOS 9.0+
 - Xcode 10.0+
 - Swift 4.2+
 
@@ -18,7 +18,7 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 
 ```ruby
 target 'MyApp' do
-  pod 'CellViewModel', '~> 1.4.1'
+  pod 'CellViewModel', '~> 1.5.0'
 end
 ```
 
