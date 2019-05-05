@@ -10,7 +10,7 @@
 		3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */; };
 		8520241B220630BC00E3F7D1 /* CellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 85202419220630BC00E3F7D1 /* CellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024232206325500E3F7D1 /* TableViewDataAdapter.swift */; };
-		852024342206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024252206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift */; };
+		852024342206325500E3F7D1 /* CollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024252206325500E3F7D1 /* CollectionViewDataAdapter.swift */; };
 		852024352206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024262206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift */; };
 		852024362206325500E3F7D1 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024272206325500E3F7D1 /* Section.swift */; };
 		852024372206325500E3F7D1 /* UITableView+ViewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852024292206325500E3F7D1 /* UITableView+ViewModels.swift */; };
@@ -29,7 +29,7 @@
 		85202419220630BC00E3F7D1 /* CellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
 		8520241A220630BC00E3F7D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		852024232206325500E3F7D1 /* TableViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataAdapter.swift; sourceTree = "<group>"; };
-		852024252206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupCollectionViewDataAdapter.swift; sourceTree = "<group>"; };
+		852024252206325500E3F7D1 /* CollectionViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataAdapter.swift; sourceTree = "<group>"; };
 		852024262206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyCollectionViewDataAdapter.swift; sourceTree = "<group>"; };
 		852024272206325500E3F7D1 /* Section.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		852024292206325500E3F7D1 /* UITableView+ViewModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+ViewModels.swift"; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		852024242206325500E3F7D1 /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				852024252206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift */,
+				852024252206325500E3F7D1 /* CollectionViewDataAdapter.swift */,
 				852024262206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift */,
 			);
 			path = CollectionView;
@@ -229,7 +229,7 @@
 				852024382206325500E3F7D1 /* UICollectionView+ViewModel.swift in Sources */,
 				8520243B2206325500E3F7D1 /* XibInitializable.swift in Sources */,
 				8520243D2206325500E3F7D1 /* AccessiblityDisplayOptions.swift in Sources */,
-				852024342206325500E3F7D1 /* GroupCollectionViewDataAdapter.swift in Sources */,
+				852024342206325500E3F7D1 /* CollectionViewDataAdapter.swift in Sources */,
 				8520243E2206325500E3F7D1 /* Accessible.swift in Sources */,
 				3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */,
 				852024362206325500E3F7D1 /* Section.swift in Sources */,

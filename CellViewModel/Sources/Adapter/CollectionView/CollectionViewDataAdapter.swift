@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
+open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     open var data: [Section] = [] {
         didSet {
@@ -24,7 +24,9 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
         collectionView.dataSource = self
     }
     
-    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+    // MARK: - UICollectionViewDataSource
+    
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return data.count
     }
     
@@ -45,6 +47,12 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
         return collectionView.dequeueReusableCell(with: itemModel(at: indexPath), for: indexPath)
     }
     
+    // MARK: - Adapter
+    
+    open func sectionModel(at index: Int) -> Section {
+        return data[index]
+    }
+    
     open func supplementaryModel(ofKind kind: String, at indexPath: IndexPath) -> AnySupplementaryViewModel? {
         let section = data[indexPath.section]
         
@@ -56,10 +64,6 @@ open class GroupCollectionViewDataAdapter: NSObject, UICollectionViewDataSource 
         default:
             return nil
         }
-    }
-    
-    open func sectionModel(at index: Int) -> Section {
-        return data[index]
     }
     
     open func supplementaryModel(ofKind kind: String, in section: Int) -> AnySupplementaryViewModel? {
