@@ -18,7 +18,7 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 
 ```ruby
 target 'MyApp' do
-  pod 'CellViewModel', '~> 1.6.0'
+  pod 'CellViewModel', '~> 1.6.1'
 end
 ```
 

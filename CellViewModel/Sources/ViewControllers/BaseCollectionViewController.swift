@@ -10,7 +10,11 @@ import UIKit
 
 open class BaseCollectionViewController: UIViewController, UICollectionViewDelegateFlowLayout {
     
-    private(set) open lazy var adapter = CollectionViewDataAdapter(collectionView: self._collectionView)
+    private(set) open lazy var adapter = CollectionViewDataAdapter(collectionView: self._collectionView, inferModelTypes: self.automaticallyInferCellViewModelTypes)
+    
+    open var automaticallyInferCellViewModelTypes: Bool {
+        return false
+    }
     
     open var viewModels: [AnyCellViewModel.Type] {
         // must be implemented in subclasses
