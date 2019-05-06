@@ -12,14 +12,20 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     open var data: [Section] = [] {
         didSet {
+            if inferModelTypes {
+                register(data)
+            }
             collectionView?.reloadData()
         }
     }
     
     private weak var collectionView: UICollectionView?
     
-    public init(collectionView: UICollectionView) {
+    private let inferModelTypes: Bool
+    
+    public init(collectionView: UICollectionView, inferModelTypes: Bool = false) {
         self.collectionView = collectionView
+        self.inferModelTypes = inferModelTypes
         super.init()
         collectionView.dataSource = self
     }
@@ -83,5 +89,21 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {
         return data[indexPath.section].items[indexPath.item]
+    }
+    
+    // MARK: - Type Registration
+    
+    private func register(_ data: [Section]) {
+        for section in data {
+            if let header = section.header {
+                collectionView?.register(type(of: header))
+            }
+            if let footer = section.footer {
+                collectionView?.register(type(of: footer))
+            }
+            for item in section.items {
+                collectionView?.register(type(of: item))
+            }
+        }
     }
 }
