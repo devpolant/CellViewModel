@@ -10,6 +10,7 @@
 		3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */; };
 		851892CC228494AC00774613 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CB228494AC00774613 /* BaseTableViewController.swift */; };
 		851892CE228496AB00774613 /* LazyTableViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CD228496AB00774613 /* LazyTableViewDataAdapter.swift */; };
+		851892D022849C5600774613 /* SupplementaryKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CF22849C5600774613 /* SupplementaryKind.swift */; };
 		851A8746227F73C100666B97 /* BaseCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A8745227F73C100666B97 /* BaseCollectionViewController.swift */; };
 		851A8748227F78DD00666B97 /* LanguageSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851A8747227F78DD00666B97 /* LanguageSupport.swift */; };
 		8520241B220630BC00E3F7D1 /* CellViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 85202419220630BC00E3F7D1 /* CellViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,6 +32,7 @@
 		3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveCellViewModel.swift; sourceTree = "<group>"; };
 		851892CB228494AC00774613 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		851892CD228496AB00774613 /* LazyTableViewDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyTableViewDataAdapter.swift; sourceTree = "<group>"; };
+		851892CF22849C5600774613 /* SupplementaryKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryKind.swift; sourceTree = "<group>"; };
 		851A8745227F73C100666B97 /* BaseCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewController.swift; sourceTree = "<group>"; };
 		851A8747227F78DD00666B97 /* LanguageSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSupport.swift; sourceTree = "<group>"; };
 		85202416220630BC00E3F7D1 /* CellViewModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CellViewModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +149,7 @@
 				8520242D2206325500E3F7D1 /* Reusable.swift */,
 				8520242E2206325500E3F7D1 /* XibInitializable.swift */,
 				8520242F2206325500E3F7D1 /* CellViewModel.swift */,
+				851892CF22849C5600774613 /* SupplementaryKind.swift */,
 				8520242C2206325500E3F7D1 /* SupplementaryViewModel.swift */,
 				3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */,
 				852024302206325500E3F7D1 /* Accessibility */,
@@ -262,6 +265,7 @@
 				851A8748227F78DD00666B97 /* LanguageSupport.swift in Sources */,
 				8520243E2206325500E3F7D1 /* Accessible.swift in Sources */,
 				3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */,
+				851892D022849C5600774613 /* SupplementaryKind.swift in Sources */,
 				852024362206325500E3F7D1 /* Section.swift in Sources */,
 				852024372206325500E3F7D1 /* UITableView+ViewModels.swift in Sources */,
 				851892CC228494AC00774613 /* BaseTableViewController.swift in Sources */,

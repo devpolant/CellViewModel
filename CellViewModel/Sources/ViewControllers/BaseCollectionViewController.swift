@@ -2,7 +2,7 @@
 //  BaseCollectionViewController.swift
 //  CellViewModel
 //
-//  Created by Anton Poltoratskyi on 4/17/19.
+//  Created by Anton Poltoratskyi on 17.04.2019.
 //  Copyright © 2019 Anton Poltoratskyi. All rights reserved.
 //
 

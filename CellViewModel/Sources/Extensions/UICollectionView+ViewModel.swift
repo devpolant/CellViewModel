@@ -54,7 +54,7 @@ extension UICollectionView {
     
     public func dequeueReusableSupplementaryView(with viewModel: AnySupplementaryViewModel, for indexPath: IndexPath) -> UICollectionReusableView {
         let identifier = type(of: viewModel).uniqueIdentifier
-        let kind = type(of: viewModel).supplementaryKind
+        let kind = type(of: viewModel).supplementaryKind.rawValue
         let view = dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath)
         view.accessibilityIdentifier = viewModel.accessibilityIdentifier(for: indexPath)
         viewModel.setup(view: view)
@@ -64,11 +64,11 @@ extension UICollectionView {
     public func register(_ modelType: AnySupplementaryViewModel.Type) {
         if let xibFileName = (modelType.supplementaryViewClass as? XibInitializable.Type)?.xibFileName {
             let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.supplementaryViewClass))
-            register(nib, forSupplementaryViewOfKind: modelType.supplementaryKind, withReuseIdentifier: modelType.uniqueIdentifier)
+            register(nib, forSupplementaryViewOfKind: modelType.supplementaryKind.rawValue, withReuseIdentifier: modelType.uniqueIdentifier)
             
         } else {
             register(modelType.supplementaryViewClass,
-                     forSupplementaryViewOfKind: modelType.supplementaryKind,
+                     forSupplementaryViewOfKind: modelType.supplementaryKind.rawValue,
                      withReuseIdentifier: modelType.uniqueIdentifier)
         }
     }
@@ -82,11 +82,11 @@ extension UICollectionView {
     }
     
     public func register<T: SupplementaryViewModel>(_ supplementaryModel: T.Type) {
-        register(T.View.self, forSupplementaryViewOfKind: T.supplementaryKind, withReuseIdentifier: T.uniqueIdentifier)
+        register(T.View.self, forSupplementaryViewOfKind: T.supplementaryKind.rawValue, withReuseIdentifier: T.uniqueIdentifier)
     }
     
     public func register<T: SupplementaryViewModel>(_ supplementaryModel: T.Type) where T.View: XibInitializable {
         let nib = UINib(nibName: T.View.xibFileName, bundle: Bundle(for: T.View.self))
-        register(nib, forSupplementaryViewOfKind: T.supplementaryKind, withReuseIdentifier: T.uniqueIdentifier)
+        register(nib, forSupplementaryViewOfKind: T.supplementaryKind.rawValue, withReuseIdentifier: T.uniqueIdentifier)
     }
 }

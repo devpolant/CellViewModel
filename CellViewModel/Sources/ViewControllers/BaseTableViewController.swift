@@ -21,6 +21,11 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
         return []
     }
     
+    open var supplementaryModels: [AnySupplementaryViewModel.Type] {
+        // must be implemented in subclasses
+        return []
+    }
+    
     // MARK: - Views
     
     // must be set in subclasses
@@ -36,7 +41,9 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
     // MARK: - UI Setup
     
     open func setupUI() {
+        _tableView.delegate = self
         _tableView.register(viewModels)
+        _tableView.register(supplementaryModels)
     }
     
     // MARK: - View Input
@@ -56,5 +63,25 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return adapter.itemModel(at: indexPath).height(constrainedBy: tableView.bounds.width) ?? tableView.rowHeight
+    }
+    
+    open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return adapter.data[section].header.flatMap {
+            tableView.dequeueReusableSupplementaryView(with: $0, for: section)
+        }
+    }
+    
+    open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return adapter.data[section].footer.flatMap {
+            tableView.dequeueReusableSupplementaryView(with: $0, for: section)
+        }
+    }
+    
+    open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return adapter.data[section].header?.height(constrainedBy: tableView.bounds.width) ?? 0
+    }
+    
+    open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return adapter.data[section].footer?.height(constrainedBy: tableView.bounds.width) ?? 0
     }
 }

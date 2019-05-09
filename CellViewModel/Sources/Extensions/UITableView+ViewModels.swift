@@ -52,6 +52,46 @@ extension UITableView {
 
 extension UITableView {
     
+    public func dequeueReusableSupplementaryView(with viewModel: AnySupplementaryViewModel, for section: Int) -> UITableViewHeaderFooterView? {
+        let identifier = type(of: viewModel).uniqueIdentifier
+        guard let view = dequeueReusableHeaderFooterView(withIdentifier: identifier) else {
+            return nil
+        }
+        view.accessibilityIdentifier = viewModel.accessibilityIdentifier(for: section)
+        viewModel.setup(view: view)
+        return view
+    }
+    
+    public func register(_ modelType: AnySupplementaryViewModel.Type) {
+        if let xibFileName = (modelType.supplementaryViewClass as? XibInitializable.Type)?.xibFileName {
+            let nib = UINib(nibName: xibFileName, bundle: Bundle(for: modelType.supplementaryViewClass))
+            register(nib, forHeaderFooterViewReuseIdentifier: modelType.uniqueIdentifier)
+            
+        } else {
+            register(modelType.supplementaryViewClass, forHeaderFooterViewReuseIdentifier: modelType.uniqueIdentifier)
+        }
+    }
+    
+    public func register(_ models: [AnySupplementaryViewModel.Type]) {
+        models.forEach { register($0) }
+    }
+    
+    public func register(_ models: AnySupplementaryViewModel.Type...) {
+        models.forEach { register($0) }
+    }
+    
+    public func register<T: SupplementaryViewModel>(_ supplementaryModel: T.Type) {
+        register(T.View.self, forHeaderFooterViewReuseIdentifier: T.uniqueIdentifier)
+    }
+    
+    public func register<T: SupplementaryViewModel>(_ supplementaryModel: T.Type) where T.View: XibInitializable {
+        let nib = UINib(nibName: T.View.xibFileName, bundle: Bundle(for: T.View.self))
+        register(nib, forHeaderFooterViewReuseIdentifier: T.uniqueIdentifier)
+    }
+}
+
+extension UITableView {
+    
     public func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView & Reusable>(ofType type: T.Type) -> T {
         return dequeueReusableHeaderFooterView(withIdentifier: T.uniqueIdentifier) as! T
     }

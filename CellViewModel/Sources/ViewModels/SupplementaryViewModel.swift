@@ -7,19 +7,18 @@
 //
 
 import UIKit
-
-public typealias AnySupplementaryView = UICollectionReusableView
+public typealias AnySupplementaryView = UIView
 
 public protocol AnySupplementaryViewModel: Reusable, Accessible {
-    static var supplementaryKind: String { get }
+    static var supplementaryKind: SupplementaryKind { get }
     static var supplementaryViewClass: AnyClass { get }
     func setup(view: AnySupplementaryView)
     func height(constrainedBy maxWidth: CGFloat) -> CGFloat?
 }
 
 extension AnySupplementaryViewModel {
-    public static var supplementaryKind: String {
-        return CollectionSectionHeaderType
+    public static var supplementaryKind: SupplementaryKind {
+        return .header
     }
     public func height(constrainedBy maxWidth: CGFloat) -> CGFloat? {
         return nil

@@ -10,13 +10,13 @@ import UIKit
 
 public final class Section {
     
-    /// Supported only for UICollectionView. Unsupported for UITableView.
+    /// Supported only for UICollectionView. NOT supported for UITableView.
     public var insets: UIEdgeInsets?
-    /// Supported only for UICollectionView. Unsupported for UITableView.
+    /// Supported only for UICollectionView. NOT Unsupported for UITableView.
     public var lineSpacing: CGFloat?
-    /// Supported only for UICollectionView. Unsupported for UITableView.
+    
     public var header: AnySupplementaryViewModel?
-    /// Supported only for UICollectionView. Unsupported for UITableView.
+    
     public var footer: AnySupplementaryViewModel?
     
     public var items: [AnyCellViewModel]

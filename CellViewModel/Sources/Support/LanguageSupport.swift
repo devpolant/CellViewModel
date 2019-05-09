@@ -9,13 +9,13 @@
 import UIKit
 
 #if swift(>=4.2)
-    let CollectionSectionHeaderType = UICollectionView.elementKindSectionHeader
+    let collectionSectionHeaderType = UICollectionView.elementKindSectionHeader
 #else
-    let CollectionSectionHeaderType = UICollectionElementKindSectionHeader
+    let collectionSectionHeaderType = UICollectionElementKindSectionHeader
 #endif
 
 #if swift(>=4.2)
-    let CollectionSectionFooterType = UICollectionView.elementKindSectionFooter
+    let collectionSectionFooterType = UICollectionView.elementKindSectionFooter
 #else
-    let CollectionSectionFooterType = UICollectionElementKindSectionFooter
+    let collectionSectionFooterType = UICollectionElementKindSectionFooter
 #endif

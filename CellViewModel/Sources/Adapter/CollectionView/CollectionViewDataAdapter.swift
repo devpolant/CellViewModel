@@ -63,9 +63,9 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
         let section = data[indexPath.section]
         
         switch kind {
-        case CollectionSectionHeaderType:
+        case collectionSectionHeaderType:
             return section.header
-        case CollectionSectionFooterType:
+        case collectionSectionFooterType:
             return section.footer
         default:
             return nil
@@ -79,12 +79,12 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     open func headerModel(in section: Int) -> AnySupplementaryViewModel? {
         let indexPath = IndexPath(item: 0, section: section)
-        return supplementaryModel(ofKind: CollectionSectionHeaderType, at: indexPath)
+        return supplementaryModel(ofKind: collectionSectionHeaderType, at: indexPath)
     }
     
     open func footerModel(in section: Int) -> AnySupplementaryViewModel? {
         let indexPath = IndexPath(item: 0, section: section)
-        return supplementaryModel(ofKind: CollectionSectionFooterType, at: indexPath)
+        return supplementaryModel(ofKind: collectionSectionFooterType, at: indexPath)
     }
     
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {

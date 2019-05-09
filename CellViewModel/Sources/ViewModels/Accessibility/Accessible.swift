@@ -41,4 +41,15 @@ extension Accessible {
             return accessibilityIdentifier
         }
     }
+    
+    public func accessibilityIdentifier(for section: Int) -> String? {
+        guard let accessibilityIdentifier = accessibilityIdentifier else {
+            return nil
+        }
+        if accessibilityOptions.contains(.section) {
+            return "\(accessibilityIdentifier)_\(section)"
+        } else {
+            return accessibilityIdentifier
+        }
+    }
 }
