@@ -18,7 +18,7 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 
 ```ruby
 target 'MyApp' do
-  pod 'CellViewModel', '~> 1.6.1'
+  pod 'CellViewModel', '~> 1.6.2'
 end
 ```
 
@@ -210,6 +210,14 @@ public final class Section {
     public var items: [AnyCellViewModel]
     
     /// ...
+}
+```
+
+Override `automaticallyInferCellViewModelTypes` in order to allow to automatically infer type of used view models instead of explicitly declare them in `viewModels` and `supplementaryModels` properties.
+
+```swift
+override var automaticallyInferCellViewModelTypes: Bool {
+    return true
 }
 ```
 
