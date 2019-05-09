@@ -8,54 +8,59 @@
 
 import UIKit
 
-open class TableViewDataAdapter<T>: NSObject, UITableViewDataSource {
+open class TableViewDataAdapter: NSObject, UITableViewDataSource {
     
-    public typealias DataProvider = (TableViewDataAdapter<T>, IndexPath) -> AnyCellViewModel
-    
-    open var data: [T] = [] {
+    open var data: [Section] = [] {
         didSet {
+            if inferModelTypes {
+                register(data)
+            }
             tableView?.reloadData()
         }
     }
     
-    private let dataProvider: DataProvider
-    
     private weak var tableView: UITableView?
     
-    public init(tableView: UITableView, dataProvider: @escaping DataProvider) {
+    private let inferModelTypes: Bool
+    
+    public init(tableView: UITableView, inferModelTypes: Bool = false) {
         self.tableView = tableView
-        self.dataProvider = dataProvider
+        self.inferModelTypes = inferModelTypes
         super.init()
         tableView.dataSource = self
     }
     
-    open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    // MARK: - UICollectionViewDataSource
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
     
-    open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data[section].items.count
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(with: itemModel(at: indexPath), for: indexPath)
     }
     
+    // MARK: - Adapter
+    
+    open func sectionModel(at index: Int) -> Section {
+        return data[index]
+    }
+    
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {
-        return dataProvider(self, indexPath)
+        return data[indexPath.section].items[indexPath.item]
     }
-}
-
-extension TableViewDataAdapter where T == AnyCellViewModel {
     
-    public convenience init(tableView: UITableView) {
-        self.init(tableView: tableView) { dataSource, indexPath in
-            dataSource.data[indexPath.row]
-        }
-    }
-}
-
-extension TableViewDataAdapter where T: AnyCellViewModel {
+    // MARK: - Type Registration
     
-    public convenience init(tableView: UITableView) {
-        self.init(tableView: tableView) { dataSource, indexPath in
-            dataSource.data[indexPath.row]
+    private func register(_ data: [Section]) {
+        for section in data {
+            for item in section.items {
+                tableView?.register(type(of: item))
+            }
         }
     }
 }

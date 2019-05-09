@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  LanguageSupport.swift
 //  CellViewModel
 //
 //  Created by Anton Poltoratskyi on 05.05.2019.

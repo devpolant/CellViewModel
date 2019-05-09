@@ -1,9 +1,9 @@
 //
 //  BaseCollectionViewController.swift
-//  VoucherPay
+//  CellViewModel
 //
 //  Created by Anton Poltoratskyi on 4/17/19.
-//  Copyright © 2019 andersen. All rights reserved.
+//  Copyright © 2019 Anton Poltoratskyi. All rights reserved.
 //
 
 import UIKit
