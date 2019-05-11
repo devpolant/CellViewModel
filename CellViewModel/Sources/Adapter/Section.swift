@@ -10,6 +10,8 @@ import UIKit
 
 public final class Section {
     
+    public let identifier: String?
+    
     /// Supported only for UICollectionView. NOT supported for UITableView.
     public var insets: UIEdgeInsets?
     /// Supported only for UICollectionView. NOT Unsupported for UITableView.
@@ -21,11 +23,13 @@ public final class Section {
     
     public var items: [AnyCellViewModel]
     
-    public init(insets: UIEdgeInsets? = nil,
+    public init(identifier: String? = nil,
+                insets: UIEdgeInsets? = nil,
                 lineSpacing: CGFloat? = nil,
                 header: AnySupplementaryViewModel? = nil,
                 footer: AnySupplementaryViewModel? = nil,
                 items: [AnyCellViewModel]) {
+        self.identifier = identifier
         self.insets = insets
         self.lineSpacing = lineSpacing
         self.header = header
