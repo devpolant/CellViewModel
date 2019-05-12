@@ -32,6 +32,8 @@ public final class DiffableSection {
         self.identifier = identifier
         self.insets = insets
         self.lineSpacing = lineSpacing
+        self.header = header
+        self.footer = footer
         self.items = items
     }
 }
