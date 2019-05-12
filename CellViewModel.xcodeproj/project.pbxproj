@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A07429B2288423F00083D50 /* DiffableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07429A2288423F00083D50 /* DiffableSection.swift */; };
+		3A07429D2288424C00083D50 /* DiffableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07429C2288424C00083D50 /* DiffableCellViewModel.swift */; };
+		3A07429F2288425E00083D50 /* DiffableCollectionViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A07429E2288425E00083D50 /* DiffableCollectionViewDataAdapter.swift */; };
+		3A0742AC2288429900083D50 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 3A0742A22288429900083D50 /* LICENSE */; };
+		3A0742AD2288429900083D50 /* ListDiff+BatchUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A42288429900083D50 /* ListDiff+BatchUpdates.swift */; };
+		3A0742AE2288429900083D50 /* ListDiff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A52288429900083D50 /* ListDiff.swift */; };
+		3A0742AF2288429900083D50 /* Diffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A62288429900083D50 /* Diffable.swift */; };
+		3A0742B02288429900083D50 /* Differ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A72288429900083D50 /* Differ.swift */; };
+		3A0742B12288429900083D50 /* UICollectionView+Diff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742A92288429900083D50 /* UICollectionView+Diff.swift */; };
+		3A0742B22288429900083D50 /* String+Diffable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742AA2288429900083D50 /* String+Diffable.swift */; };
+		3A0742B32288429900083D50 /* DiffResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742AB2288429900083D50 /* DiffResult.swift */; };
+		3A0742B5228843A100083D50 /* Array+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B4228843A000083D50 /* Array+Additions.swift */; };
+		3A0742B72288460800083D50 /* BaseDiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B62288460800083D50 /* BaseDiffableCollectionViewController.swift */; };
 		3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */; };
 		851892CC228494AC00774613 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CB228494AC00774613 /* BaseTableViewController.swift */; };
 		851892CE228496AB00774613 /* LazyTableViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CD228496AB00774613 /* LazyTableViewDataAdapter.swift */; };
@@ -29,6 +42,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A07429A2288423F00083D50 /* DiffableSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffableSection.swift; sourceTree = "<group>"; };
+		3A07429C2288424C00083D50 /* DiffableCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffableCellViewModel.swift; sourceTree = "<group>"; };
+		3A07429E2288425E00083D50 /* DiffableCollectionViewDataAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffableCollectionViewDataAdapter.swift; sourceTree = "<group>"; };
+		3A0742A22288429900083D50 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		3A0742A42288429900083D50 /* ListDiff+BatchUpdates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListDiff+BatchUpdates.swift"; sourceTree = "<group>"; };
+		3A0742A52288429900083D50 /* ListDiff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListDiff.swift; sourceTree = "<group>"; };
+		3A0742A62288429900083D50 /* Diffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Diffable.swift; sourceTree = "<group>"; };
+		3A0742A72288429900083D50 /* Differ.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Differ.swift; sourceTree = "<group>"; };
+		3A0742A92288429900083D50 /* UICollectionView+Diff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Diff.swift"; sourceTree = "<group>"; };
+		3A0742AA2288429900083D50 /* String+Diffable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Diffable.swift"; sourceTree = "<group>"; };
+		3A0742AB2288429900083D50 /* DiffResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiffResult.swift; sourceTree = "<group>"; };
+		3A0742B4228843A000083D50 /* Array+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Additions.swift"; sourceTree = "<group>"; };
+		3A0742B62288460800083D50 /* BaseDiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDiffableCollectionViewController.swift; sourceTree = "<group>"; };
 		3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveCellViewModel.swift; sourceTree = "<group>"; };
 		851892CB228494AC00774613 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		851892CD228496AB00774613 /* LazyTableViewDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyTableViewDataAdapter.swift; sourceTree = "<group>"; };
@@ -63,6 +89,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0742A02288429900083D50 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742A12288429900083D50 /* ListDiff */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		3A0742A12288429900083D50 /* ListDiff */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742A22288429900083D50 /* LICENSE */,
+				3A0742A32288429900083D50 /* Library */,
+				3A0742A82288429900083D50 /* Extensions */,
+				3A0742A72288429900083D50 /* Differ.swift */,
+				3A0742AB2288429900083D50 /* DiffResult.swift */,
+			);
+			path = ListDiff;
+			sourceTree = "<group>";
+		};
+		3A0742A32288429900083D50 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742A52288429900083D50 /* ListDiff.swift */,
+				3A0742A42288429900083D50 /* ListDiff+BatchUpdates.swift */,
+				3A0742A62288429900083D50 /* Diffable.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		3A0742A82288429900083D50 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3A0742A92288429900083D50 /* UICollectionView+Diff.swift */,
+				3A0742AA2288429900083D50 /* String+Diffable.swift */,
+				3A0742B4228843A000083D50 /* Array+Additions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		851892CA2284947D00774613 /* Support */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +142,7 @@
 			children = (
 				851892CB228494AC00774613 /* BaseTableViewController.swift */,
 				851A8745227F73C100666B97 /* BaseCollectionViewController.swift */,
+				3A0742B62288460800083D50 /* BaseDiffableCollectionViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -110,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				852024272206325500E3F7D1 /* Section.swift */,
+				3A07429A2288423F00083D50 /* DiffableSection.swift */,
 				852024222206325500E3F7D1 /* TableView */,
 				852024242206325500E3F7D1 /* CollectionView */,
 			);
@@ -129,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				852024252206325500E3F7D1 /* CollectionViewDataAdapter.swift */,
+				3A07429E2288425E00083D50 /* DiffableCollectionViewDataAdapter.swift */,
 				852024262206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift */,
 			);
 			path = CollectionView;
@@ -149,6 +218,7 @@
 				8520242D2206325500E3F7D1 /* Reusable.swift */,
 				8520242E2206325500E3F7D1 /* XibInitializable.swift */,
 				8520242F2206325500E3F7D1 /* CellViewModel.swift */,
+				3A07429C2288424C00083D50 /* DiffableCellViewModel.swift */,
 				851892CF22849C5600774613 /* SupplementaryKind.swift */,
 				8520242C2206325500E3F7D1 /* SupplementaryViewModel.swift */,
 				3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */,
@@ -169,6 +239,7 @@
 		8520243F2206348900E3F7D1 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				3A0742A02288429900083D50 /* Vendor */,
 				8520242B2206325500E3F7D1 /* ViewModels */,
 				852024212206325500E3F7D1 /* Adapter */,
 				852024282206325500E3F7D1 /* Extensions */,
@@ -246,6 +317,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A0742AC2288429900083D50 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,23 +329,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				8520243C2206325500E3F7D1 /* CellViewModel.swift in Sources */,
+				3A07429B2288423F00083D50 /* DiffableSection.swift in Sources */,
 				852024382206325500E3F7D1 /* UICollectionView+ViewModel.swift in Sources */,
 				851892CE228496AB00774613 /* LazyTableViewDataAdapter.swift in Sources */,
+				3A0742B72288460800083D50 /* BaseDiffableCollectionViewController.swift in Sources */,
 				8520243B2206325500E3F7D1 /* XibInitializable.swift in Sources */,
+				3A0742B12288429900083D50 /* UICollectionView+Diff.swift in Sources */,
 				8520243D2206325500E3F7D1 /* AccessiblityDisplayOptions.swift in Sources */,
+				3A0742B5228843A100083D50 /* Array+Additions.swift in Sources */,
+				3A0742AF2288429900083D50 /* Diffable.swift in Sources */,
 				852024342206325500E3F7D1 /* CollectionViewDataAdapter.swift in Sources */,
 				851A8748227F78DD00666B97 /* LanguageSupport.swift in Sources */,
 				8520243E2206325500E3F7D1 /* Accessible.swift in Sources */,
 				3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */,
 				851892D022849C5600774613 /* SupplementaryKind.swift in Sources */,
 				852024362206325500E3F7D1 /* Section.swift in Sources */,
+				3A0742AD2288429900083D50 /* ListDiff+BatchUpdates.swift in Sources */,
 				852024372206325500E3F7D1 /* UITableView+ViewModels.swift in Sources */,
 				851892CC228494AC00774613 /* BaseTableViewController.swift in Sources */,
 				8520243A2206325500E3F7D1 /* Reusable.swift in Sources */,
+				3A0742B22288429900083D50 /* String+Diffable.swift in Sources */,
+				3A07429D2288424C00083D50 /* DiffableCellViewModel.swift in Sources */,
 				852024392206325500E3F7D1 /* SupplementaryViewModel.swift in Sources */,
+				3A0742B02288429900083D50 /* Differ.swift in Sources */,
+				3A0742AE2288429900083D50 /* ListDiff.swift in Sources */,
+				3A0742B32288429900083D50 /* DiffResult.swift in Sources */,
 				851A8746227F73C100666B97 /* BaseCollectionViewController.swift in Sources */,
 				852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */,
 				852024352206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift in Sources */,
+				3A07429F2288425E00083D50 /* DiffableCollectionViewDataAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
