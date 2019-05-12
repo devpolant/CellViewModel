@@ -10,7 +10,7 @@ import UIKit
 
 open class DiffableCollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
-    private(set) var data: [DiffableSection] = []
+    public private(set) var data: [DiffableSection] = []
     
     private let differ: Differ = ListDiffer()
     

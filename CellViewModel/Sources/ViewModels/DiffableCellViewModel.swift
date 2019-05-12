@@ -11,11 +11,11 @@ public protocol DiffableCellViewModel: AnyCellViewModel, Diffable {
 }
 
 extension DiffableCellViewModel {
-    var diffIdentifier: AnyHashable {
+    public var diffIdentifier: AnyHashable {
         return String(describing: type(of: self))
     }
     
-    func isEqual(to model: DiffableCellViewModel) -> Bool {
+    public func isEqual(to model: DiffableCellViewModel) -> Bool {
         return model is Self
     }
 }
