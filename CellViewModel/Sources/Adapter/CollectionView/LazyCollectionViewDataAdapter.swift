@@ -14,17 +14,22 @@ open class LazyCollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSourc
     
     open var data: [T] = [] {
         didSet {
-            collectionView?.reloadData()
+            if automaticallyReloadData {            
+                collectionView?.reloadData()
+            }
         }
     }
     
     private let dataProvider: DataProvider
     
+    private let automaticallyReloadData: Bool
+    
     private weak var collectionView: UICollectionView?
     
-    public init(collectionView: UICollectionView, dataProvider: @escaping DataProvider) {
+    public init(collectionView: UICollectionView, automaticallyReloadData: Bool = true, dataProvider: @escaping DataProvider) {
         self.collectionView = collectionView
         self.dataProvider = dataProvider
+        self.automaticallyReloadData = automaticallyReloadData
         super.init()
         collectionView.dataSource = self
     }

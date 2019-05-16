@@ -14,17 +14,22 @@ open class LazyTableViewDataAdapter<T>: NSObject, UITableViewDataSource {
     
     open var data: [T] = [] {
         didSet {
-            tableView?.reloadData()
+            if automaticallyReloadData {
+                tableView?.reloadData()
+            }
         }
     }
     
     private let dataProvider: DataProvider
     
+    private let automaticallyReloadData: Bool
+    
     private weak var tableView: UITableView?
     
-    public init(tableView: UITableView, dataProvider: @escaping DataProvider) {
+    public init(tableView: UITableView, automaticallyReloadData: Bool = true, dataProvider: @escaping DataProvider) {
         self.tableView = tableView
         self.dataProvider = dataProvider
+        self.automaticallyReloadData = automaticallyReloadData
         super.init()
         tableView.dataSource = self
     }

@@ -15,7 +15,9 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
             if inferModelTypes {
                 register(data)
             }
-            collectionView?.reloadData()
+            if automaticallyReloadData {
+                collectionView?.reloadData()
+            }
         }
     }
     
@@ -23,9 +25,12 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     private let inferModelTypes: Bool
     
-    public init(collectionView: UICollectionView, inferModelTypes: Bool = false) {
+    private let automaticallyReloadData: Bool
+    
+    public init(collectionView: UICollectionView, inferModelTypes: Bool = false, automaticallyReloadData: Bool = true) {
         self.collectionView = collectionView
         self.inferModelTypes = inferModelTypes
+        self.automaticallyReloadData = automaticallyReloadData
         super.init()
         collectionView.dataSource = self
     }

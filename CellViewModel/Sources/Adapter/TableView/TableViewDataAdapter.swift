@@ -15,7 +15,9 @@ open class TableViewDataAdapter: NSObject, UITableViewDataSource {
             if inferModelTypes {
                 register(data)
             }
-            tableView?.reloadData()
+            if automaticallyReloadData {
+                tableView?.reloadData()
+            }
         }
     }
     
@@ -23,9 +25,12 @@ open class TableViewDataAdapter: NSObject, UITableViewDataSource {
     
     private let inferModelTypes: Bool
     
-    public init(tableView: UITableView, inferModelTypes: Bool = false) {
+    private let automaticallyReloadData: Bool
+    
+    public init(tableView: UITableView, inferModelTypes: Bool = false, automaticallyReloadData: Bool = true) {
         self.tableView = tableView
         self.inferModelTypes = inferModelTypes
+        self.automaticallyReloadData = automaticallyReloadData
         super.init()
         tableView.dataSource = self
     }
