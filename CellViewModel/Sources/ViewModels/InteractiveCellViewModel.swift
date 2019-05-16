@@ -6,6 +6,6 @@
 //  Copyright © 2019 Anton Poltoratskyi. All rights reserved.
 //
 
-protocol InteractiveCellViewModel {
+public protocol InteractiveCellViewModel {
     var selectionHandler: (() -> Void)? { get }
 }

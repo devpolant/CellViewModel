@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 public typealias AnySupplementaryView = UIView
 
 public protocol AnySupplementaryViewModel: Reusable, Accessible {
