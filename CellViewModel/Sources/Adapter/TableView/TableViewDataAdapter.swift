@@ -63,6 +63,12 @@ open class TableViewDataAdapter: NSObject, UITableViewDataSource {
     
     private func register(_ data: [Section]) {
         for section in data {
+            if let header = section.header {
+                tableView?.register(type(of: header))
+            }
+            if let footer = section.footer {
+                tableView?.register(type(of: footer))
+            }
             for item in section.items {
                 tableView?.register(type(of: item))
             }
