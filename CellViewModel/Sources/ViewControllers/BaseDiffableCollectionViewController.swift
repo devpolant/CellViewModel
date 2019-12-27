@@ -95,7 +95,8 @@ open class BaseDiffableCollectionViewController: UIViewController, UICollectionV
     }
     
     open func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let maxWidth = collectionView.bounds.width
+        let insets = adapter.sectionModel(at: indexPath.section).insets ?? .zero
+        let maxWidth = collectionView.bounds.width - insets.left - insets.right
         
         let viewModel = adapter.itemModel(at: indexPath)
         let height = viewModel.height(constrainedBy: maxWidth) ?? 0
