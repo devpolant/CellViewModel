@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
 
   s.name        = "CellViewModel"
 
-  s.version     = "1.7.7"
+  s.version     = "1.7.8"
 
   s.summary     = "CellViewModel is a protocol that includes logic for reuse, accessibility and dequeue"
 

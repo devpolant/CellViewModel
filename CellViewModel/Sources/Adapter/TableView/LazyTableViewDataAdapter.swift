@@ -35,6 +35,9 @@ open class LazyTableViewDataAdapter<T>: NSObject, UITableViewDataSource {
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard data.indices.contains(section) else {
+            return 0
+        }
         return data.count
     }
     

@@ -42,6 +42,9 @@ open class TableViewDataAdapter: NSObject, UITableViewDataSource {
     }
     
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard contains(section: section) else {
+            return 0
+        }
         return data[section].items.count
     }
     

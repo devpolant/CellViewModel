@@ -35,6 +35,9 @@ open class LazyCollectionViewDataAdapter<T>: NSObject, UICollectionViewDataSourc
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard data.indices.contains(section) else {
+            return 0
+        }
         return data.count
     }
     

@@ -42,6 +42,9 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     }
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard contains(section: section) else {
+            return 0
+        }
         return data[section].items.count
     }
     
@@ -94,6 +97,14 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {
         return data[indexPath.section].items[indexPath.item]
+    }
+    
+    open func containsModel(at indexPath: IndexPath) -> Bool {
+        return contains(section: indexPath.section) && data[indexPath.section].items.indices.contains(indexPath.item)
+    }
+    
+    open func contains(section: Int) -> Bool {
+        return data.indices.contains(section)
     }
     
     // MARK: - Type Registration
