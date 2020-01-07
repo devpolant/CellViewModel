@@ -62,26 +62,41 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
     }
     
     open func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard adapter.containsModel(at: indexPath) else {
+            return 0
+        }
         return adapter.itemModel(at: indexPath).height(constrainedBy: tableView.bounds.width) ?? tableView.rowHeight
     }
     
     open func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard adapter.contains(section: section) else {
+            return nil
+        }
         return adapter.data[section].header.flatMap {
             tableView.dequeueReusableSupplementaryView(with: $0, for: section)
         }
     }
     
     open func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard adapter.contains(section: section) else {
+            return nil
+        }
         return adapter.data[section].footer.flatMap {
             tableView.dequeueReusableSupplementaryView(with: $0, for: section)
         }
     }
     
     open func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        guard adapter.contains(section: section) else {
+            return 0
+        }
         return adapter.data[section].header?.height(constrainedBy: tableView.bounds.width) ?? 0
     }
     
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        guard adapter.contains(section: section) else {
+            return 0
+        }
         return adapter.data[section].footer?.height(constrainedBy: tableView.bounds.width) ?? 0
     }
 }
