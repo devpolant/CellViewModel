@@ -55,7 +55,7 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
     // MARK: - Table View Delegate
     
     open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let item = adapter.itemModel(at: indexPath) as? InteractiveCellViewModel else {
+        guard adapter.containsModel(at: indexPath), let item = adapter.itemModel(at: indexPath) as? InteractiveCellViewModel else {
             return
         }
         item.selectionHandler?()
@@ -72,7 +72,7 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
         guard adapter.contains(section: section) else {
             return nil
         }
-        return adapter.data[section].header.flatMap {
+        return adapter.headerModel(in: section).flatMap {
             tableView.dequeueReusableSupplementaryView(with: $0, for: section)
         }
     }
@@ -81,7 +81,7 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
         guard adapter.contains(section: section) else {
             return nil
         }
-        return adapter.data[section].footer.flatMap {
+        return adapter.footerModel(in: section).flatMap {
             tableView.dequeueReusableSupplementaryView(with: $0, for: section)
         }
     }
@@ -90,13 +90,13 @@ open class BaseTableViewController: UIViewController, UITableViewDelegate {
         guard adapter.contains(section: section) else {
             return 0
         }
-        return adapter.data[section].header?.height(constrainedBy: tableView.bounds.width) ?? 0
+        return adapter.headerModel(in: section)?.height(constrainedBy: tableView.bounds.width) ?? 0
     }
     
     open func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         guard adapter.contains(section: section) else {
             return 0
         }
-        return adapter.data[section].footer?.height(constrainedBy: tableView.bounds.width) ?? 0
+        return adapter.footerModel(in: section)?.height(constrainedBy: tableView.bounds.width) ?? 0
     }
 }

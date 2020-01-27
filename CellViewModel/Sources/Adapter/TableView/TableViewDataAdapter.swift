@@ -58,6 +58,14 @@ open class TableViewDataAdapter: NSObject, UITableViewDataSource {
         return data[index]
     }
     
+    open func headerModel(in section: Int) -> AnySupplementaryViewModel? {
+        return data[section].header
+    }
+    
+    open func footerModel(in section: Int) -> AnySupplementaryViewModel? {
+        return data[section].footer
+    }
+    
     open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {
         return data[indexPath.section].items[indexPath.item]
     }

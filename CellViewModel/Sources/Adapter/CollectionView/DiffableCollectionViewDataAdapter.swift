@@ -86,6 +86,14 @@ open class DiffableCollectionViewDataAdapter: NSObject, UICollectionViewDataSour
         return data[indexPath.section].items[indexPath.item]
     }
     
+    open func containsModel(at indexPath: IndexPath) -> Bool {
+        return contains(section: indexPath.section) && data[indexPath.section].items.indices.contains(indexPath.item)
+    }
+    
+    open func contains(section: Int) -> Bool {
+        return data.indices.contains(section)
+    }
+    
     open func update(data: [DiffableSection], animated: Bool) {
         collectionView?.performUpdate(animated: animated, updates: {
             self.update(data: data)
