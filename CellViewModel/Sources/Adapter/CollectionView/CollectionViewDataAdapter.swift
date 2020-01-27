@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
+open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource, SectionAdapter {
     
     open var data: [Section] = [] {
         didSet {
@@ -63,10 +63,6 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     
     // MARK: - Adapter
     
-    open func sectionModel(at index: Int) -> Section {
-        return data[index]
-    }
-    
     open func supplementaryModel(ofKind kind: String, at indexPath: IndexPath) -> AnySupplementaryViewModel? {
         let section = data[indexPath.section]
         
@@ -93,18 +89,6 @@ open class CollectionViewDataAdapter: NSObject, UICollectionViewDataSource {
     open func footerModel(in section: Int) -> AnySupplementaryViewModel? {
         let indexPath = IndexPath(item: 0, section: section)
         return supplementaryModel(ofKind: collectionSectionFooterType, at: indexPath)
-    }
-    
-    open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {
-        return data[indexPath.section].items[indexPath.item]
-    }
-    
-    open func containsModel(at indexPath: IndexPath) -> Bool {
-        return contains(section: indexPath.section) && data[indexPath.section].items.indices.contains(indexPath.item)
-    }
-    
-    open func contains(section: Int) -> Bool {
-        return data.indices.contains(section)
     }
     
     // MARK: - Type Registration

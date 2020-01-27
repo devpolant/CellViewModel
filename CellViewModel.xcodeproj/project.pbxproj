@@ -21,6 +21,7 @@
 		3A0742B5228843A100083D50 /* Array+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B4228843A000083D50 /* Array+Additions.swift */; };
 		3A0742B72288460800083D50 /* BaseDiffableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A0742B62288460800083D50 /* BaseDiffableCollectionViewController.swift */; };
 		3A091E98225B554400F2CA4C /* InteractiveCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */; };
+		3A574A0B23DF212800B52D69 /* SectionAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A574A0A23DF212800B52D69 /* SectionAdapter.swift */; };
 		851892CC228494AC00774613 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CB228494AC00774613 /* BaseTableViewController.swift */; };
 		851892CE228496AB00774613 /* LazyTableViewDataAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CD228496AB00774613 /* LazyTableViewDataAdapter.swift */; };
 		851892D022849C5600774613 /* SupplementaryKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 851892CF22849C5600774613 /* SupplementaryKind.swift */; };
@@ -56,6 +57,7 @@
 		3A0742B4228843A000083D50 /* Array+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Additions.swift"; sourceTree = "<group>"; };
 		3A0742B62288460800083D50 /* BaseDiffableCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDiffableCollectionViewController.swift; sourceTree = "<group>"; };
 		3A091E97225B554300F2CA4C /* InteractiveCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveCellViewModel.swift; sourceTree = "<group>"; };
+		3A574A0A23DF212800B52D69 /* SectionAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionAdapter.swift; sourceTree = "<group>"; };
 		851892CB228494AC00774613 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		851892CD228496AB00774613 /* LazyTableViewDataAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyTableViewDataAdapter.swift; sourceTree = "<group>"; };
 		851892CF22849C5600774613 /* SupplementaryKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupplementaryKind.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			children = (
 				852024272206325500E3F7D1 /* Section.swift */,
 				3A07429A2288423F00083D50 /* DiffableSection.swift */,
+				3A574A0A23DF212800B52D69 /* SectionAdapter.swift */,
 				852024222206325500E3F7D1 /* TableView */,
 				852024242206325500E3F7D1 /* CollectionView */,
 			);
@@ -355,6 +358,7 @@
 				3A0742AE2288429900083D50 /* ListDiff.swift in Sources */,
 				3A0742B32288429900083D50 /* DiffResult.swift in Sources */,
 				851A8746227F73C100666B97 /* BaseCollectionViewController.swift in Sources */,
+				3A574A0B23DF212800B52D69 /* SectionAdapter.swift in Sources */,
 				852024332206325500E3F7D1 /* TableViewDataAdapter.swift in Sources */,
 				852024352206325500E3F7D1 /* LazyCollectionViewDataAdapter.swift in Sources */,
 				3A07429F2288425E00083D50 /* DiffableCollectionViewDataAdapter.swift in Sources */,

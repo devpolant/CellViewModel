@@ -8,7 +8,7 @@
 
 import UIKit
 
-open class TableViewDataAdapter: NSObject, UITableViewDataSource {
+open class TableViewDataAdapter: NSObject, UITableViewDataSource, SectionAdapter {
     
     open var data: [Section] = [] {
         didSet {
@@ -50,32 +50,6 @@ open class TableViewDataAdapter: NSObject, UITableViewDataSource {
     
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(with: itemModel(at: indexPath), for: indexPath)
-    }
-    
-    // MARK: - Adapter
-    
-    open func sectionModel(at index: Int) -> Section {
-        return data[index]
-    }
-    
-    open func headerModel(in section: Int) -> AnySupplementaryViewModel? {
-        return data[section].header
-    }
-    
-    open func footerModel(in section: Int) -> AnySupplementaryViewModel? {
-        return data[section].footer
-    }
-    
-    open func itemModel(at indexPath: IndexPath) -> AnyCellViewModel {
-        return data[indexPath.section].items[indexPath.item]
-    }
-    
-    open func containsModel(at indexPath: IndexPath) -> Bool {
-        return contains(section: indexPath.section) && data[indexPath.section].items.indices.contains(indexPath.row)
-    }
-    
-    open func contains(section: Int) -> Bool {
-        return data.indices.contains(section)
     }
     
     // MARK: - Type Registration
