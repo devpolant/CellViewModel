@@ -6,6 +6,8 @@
 //  Copyright © 2020 Anton Poltoratskyi. All rights reserved.
 //
 
+import Foundation
+
 public protocol SectionAdapter {
     var data: [Section] { get }
     
@@ -41,6 +43,7 @@ extension SectionAdapter {
     }
     
     public func containsModel(at indexPath: IndexPath) -> Bool {
-        return contains(section: indexPath.section) && data[indexPath.section].items.indices.contains(indexPath.row)
+        return contains(section: indexPath.section)
+            && data[indexPath.section].items.indices.contains(indexPath.row)
     }
 }

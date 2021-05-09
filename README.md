@@ -1,5 +1,5 @@
-[![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)](https://swift.org)
-[![Xcode](https://img.shields.io/badge/Xcode-10.0-blue.svg)](https://developer.apple.com/xcode)
+[![Swift](https://img.shields.io/badge/Swift-5.0-orange.svg)](https://swift.org)
+[![Xcode](https://img.shields.io/badge/Xcode-12.0-blue.svg)](https://developer.apple.com/xcode)
 [![MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/CellViewModel.svg)](https://cocoapods.org/pods/CellViewModel)
 
@@ -9,8 +9,8 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 
 ## Requirements:
 - iOS 9.0+
-- Xcode 10.0+
-- Swift 4.2+
+- Xcode 12.0+
+- Swift 5.0+
 
 ## Installation
 
@@ -18,14 +18,14 @@ Using CellViewModel to configure you UITableViewCell or UICollectionViewCell is 
 
 ```ruby
 target 'MyApp' do
-  pod 'CellViewModel', '~> 1.7.9'
+  pod 'CellViewModel', '~> 1.8.0'
 end
 ```
 
 #### Carthage
 
 ```ogdl
-github "AntonPoltoratskyi/CellViewModel" "master"
+github "devpolant/CellViewModel" "master"
 ```
 
 ## Usage
@@ -226,7 +226,7 @@ override var automaticallyInferCellViewModelTypes: Bool {
 
 Sometimes there is a need to define `accessibilityIdentifier` for UI testing purposes.
 
-There is [Accessible](https://github.com/AntonPoltoratskyi/CellViewModel/blob/master/CellViewModel/Sources/ViewModels/Accessibility/Accessible.swift) protocol that is conformed by CellViewModel protocol.
+There is [Accessible](https://github.com/devpolant/CellViewModel/blob/master/CellViewModel/Sources/ViewModels/Accessibility/Accessible.swift) protocol that is conformed by CellViewModel protocol.
 
 ```swift
 public protocol Accessible {
@@ -267,4 +267,4 @@ struct UserCellModel: CellViewModel {
 
 ## License
 
-**CellViewModel** is available under the MIT license. See the [LICENSE](https://github.com/AntonPoltoratskyi/CellViewModel/blob/master/LICENSE) file for more info.
+**CellViewModel** is available under the MIT license. See the [LICENSE](https://github.com/devpolant/CellViewModel/blob/master/LICENSE) file for more info.

@@ -13,7 +13,7 @@ public struct AccessibilityDisplayOptions: OptionSet {
         self.rawValue = rawValue
     }
     
-    public static let none      = AccessibilityDisplayOptions(rawValue: 0)
+    public static let none      = AccessibilityDisplayOptions([])
     public static let section   = AccessibilityDisplayOptions(rawValue: 1 << 0)
     public static let row       = AccessibilityDisplayOptions(rawValue: 1 << 1)
     public static let all       = AccessibilityDisplayOptions(rawValue: Int.max)
